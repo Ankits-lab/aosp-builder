@@ -13,6 +13,7 @@ env
  adduser --disabled-password --gecos '' docker
  adduser docker sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+curl https://rclone.org/install.sh | sudo bash
 sudo apt-get update -y
 sudo apt-get install -y aria2
 sudo apt-get install -y tar
