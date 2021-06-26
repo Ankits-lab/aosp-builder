@@ -6,10 +6,10 @@ nproc
 cat /etc/os*
 env
 
-url=https://www.keneankit990.workers.dev/ccache/ci2/ccache.tar.gz # Where cccahe is located, use your ones, from where you want to download ccache!
+#url=https://www.keneankit990.workers.dev/ccache/ci2/ccache.tar.gz # Where cccahe is located, use your ones, from where you want to download ccache!
 ## my creativity 
  apt-get update \
- && apt-get install -y sudo
+ && apt-get install -y sudo wget
  adduser --disabled-password --gecos '' docker
  adduser docker sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
@@ -18,6 +18,7 @@ sudo apt-get install -y aria2
 sudo apt-get install -y tar
 ##BELOW IS ORIGINAL
 cd /tmp # Where to download cccahe
-time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
+time aria2c https://www.keneankit990.workers.dev/0:/ccache/ci2/ccache.tar.gz -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
+wget https://www.keneankit990.workers.dev/0:/ccache/ci2/ccache.tar.gz
 time tar xf ccache.tar.gz  # Extract ccache so ci can use it
 rm -rf ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
