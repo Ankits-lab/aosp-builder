@@ -4,14 +4,14 @@ mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
 
 ##some of my work
-RUN apt-get update \
+ apt-get update \
  && apt-get install -y sudo
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+ adduser --disabled-password --gecos '' docker
+ adduser docker sudo
+echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 # this is where I was running into problems with the other approaches
-RUN sudo apt-get update 
+sudo apt-get update 
 sudo apt install -y git
 curl https://rclone.org/install.sh | sudo bash
 git config --global user.name "keneankit01"
