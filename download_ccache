@@ -18,7 +18,6 @@ sudo apt-get install -y aria2
 sudo apt-get install -y tar
 ##BELOW IS ORIGINAL
 cd /tmp # Where to download cccahe
-time aria2c https://www.keneankit990.workers.dev/0:/ccache/ci2/ccache.tar.gz -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
-wget https://www.keneankit990.workers.dev/0:/ccache/ci2/ccache.tar.gz
+rclone copy -P remote:ccache/ci2/ccache.tar.gz local:/tmp/ # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
 time tar xf ccache.tar.gz  # Extract ccache so ci can use it
 rm -rf ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
