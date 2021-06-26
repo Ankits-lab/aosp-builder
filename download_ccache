@@ -19,6 +19,7 @@ sudo apt-get install -y aria2
 sudo apt-get install -y tar
 ##BELOW IS ORIGINAL
 cd /tmp # Where to download cccahe
+mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
 rclone copy -P remote:ccache/ci2/ccache.tar.gz local:/ # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
 time tar xf ccache.tar.gz  # Extract ccache so ci can use it
