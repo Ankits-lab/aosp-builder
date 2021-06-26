@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get install -y pigz
 cd /tmp
 
 # Compress function with pigz for faster compression
