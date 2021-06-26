@@ -13,7 +13,6 @@ url=https://www.keneankit990.workers.dev/ccache/ci2/ccache.tar.gz # Where cccahe
  adduser --disabled-password --gecos '' docker
  adduser docker sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-USER docker
 sudo apt-get update -y
 sudo apt-get install -y aria2
 sudo apt-get install -y tar
